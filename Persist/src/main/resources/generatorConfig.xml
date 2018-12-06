@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- eclipse marketplace 要安装mybatis generator ,run as generator 自动生成 -->
+	
+	<context id="context1" targetRuntime="MyBatis3Simple">
+	
+		<commentGenerator>
+	    	<property name="addRemarkComments" value="true" />
+		</commentGenerator>
+	
+		<jdbcConnection
+			connectionURL="jdbc:mysql://192.168.1.100:3306/CSIC?characterEncoding=utf-8"
+			driverClass="com.mysql.jdbc.Driver" password="root" userId="root" />
+			
+		<javaModelGenerator targetPackage="com.csicerc.dss.domain"
+			targetProject="Persist" />
+		<sqlMapGenerator targetPackage="com.csicerc.dss.persist.dao"
+			targetProject="Persist" />
+		<javaClientGenerator targetPackage="com.csicerc.dss.persist.dao"
+			targetProject="Persist" type="XMLMAPPER" />
+
+		<table schema="%" tableName="%"
+			enableCountByExample="false" enableUpdateByExample="true"
+			enableDeleteByExample="false" enableSelectByExample="true"
+			selectByExampleQueryId="true">
+		</table>
+
+	</context>
+</generatorConfiguration>
